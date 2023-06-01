@@ -32,14 +32,14 @@ Data Model of Events
 ## Requirements
 
 - [Node.js](https://nodejs.org/en/)
-- [MongoDB](https://www.mongodb.com/)
+<!-- - [MongoDB](https://www.mongodb.com/) -->
 - [Postman](https://www.postman.com/)
 
 ## Technologies Used
 
 - [Node.js](https://nodejs.org/en/)
 - [Express.js](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
+<!-- - [MongoDB](https://www.mongodb.com/) -->
 - [Mongoose](https://mongoosejs.com/)
 <!-- - [Multer](https://www.npmjs.com/package/multer)
 - [Cloudinary](https://cloudinary.com/) -->

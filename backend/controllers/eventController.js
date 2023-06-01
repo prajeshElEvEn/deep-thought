@@ -52,3 +52,106 @@ const getLatestEvents = asyncHandler(async (req, res) => {
         throw new Error('Server error')
     }
 })
+
+// @desc Creates an event and returns the Id of the event i.e. created
+// @route POST /api/v3/app/events
+// @access Private
+
+const createEvent = asyncHandler(async (req, res) => {
+    const { name, files, tagline, schedule, description, moderator, category, sub_category, rigor_rank } = req.body
+
+    if (!name || !files || !tagline || !schedule || !description || !moderator || !category || !sub_category || !rigor_rank) {
+        res.status(400)
+        throw new Error('Please fill all fields')
+    }
+
+    try {
+        const event = new Event({
+            name,
+            files,
+            tagline,
+            schedule,
+            description,
+            moderator,
+            category,
+            sub_category,
+            rigor_rank
+        })
+
+        await event.create()
+
+        return res.status(201).json({
+            eventId: event._id
+        })
+    } catch (error) {
+        res.status(500)
+        throw new Error('Server error')
+    }
+})
+
+// @desc Updates an event by it's unique id
+// @route PUT /api/v3/app/events/:id
+// @access Private
+
+const updateEvent = asyncHandler(async (req, res) => {
+    const eventId = req.params.id
+    const { name, files, tagline, schedule, description, moderator, category, sub_category, rigor_rank } = req.body
+
+    try {
+        const event = await Event.findByIdAndUpdate(
+            eventId,
+            {
+                name,
+                files,
+                tagline,
+                schedule,
+                description,
+                moderator,
+                category,
+                sub_category,
+                rigor_rank
+            },
+            { new: true }
+        )
+
+        if (!event) {
+            res.status(404)
+            throw new Error('Event not found')
+        }
+
+        return res.status(200).json({ eventId: event._id })
+    } catch (error) {
+        res.status(500)
+        throw new Error('Server error')
+    }
+})
+
+// @desc Deletes an event by it's unique id
+// @route DELETE /api/v3/app/events/:id
+// @access Private
+
+const deleteEvent = asyncHandler(async (req, res) => {
+    const eventId = req.params.id
+
+    try {
+        const event = await Event.findByIdAndDelete(eventId)
+
+        if (!event) {
+            res.status(404)
+            throw new Error('Event not found')
+        }
+
+        return res.status(200).json({ message: 'Event deleted successfully' })
+    } catch (error) {
+        res.status(500)
+        throw new Error('Server error')
+    }
+})
+
+module.exports = {
+    getEventById,
+    getLatestEvents,
+    createEvent,
+    updateEvent,
+    deleteEvent
+}

@@ -5,6 +5,9 @@ const port = process.env.PORT || 8000
 
 const app = express()
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 app.use('/api/v3/app', require('./routes/eventRoutes'))
 
 app.use(errorHandler)

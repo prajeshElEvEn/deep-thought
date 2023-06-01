@@ -1,0 +1,16 @@
+{
+  "name": "deep-thought",
+  "version": "1.0.0",
+  "description": "Backend Developer Assignment for Deep Though Intern",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eleven",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.2"
+  }
+}

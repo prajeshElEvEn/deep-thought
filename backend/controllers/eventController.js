@@ -24,7 +24,7 @@ const getEventById = asyncHandler(async (req, res) => {
 })
 
 // @desc Gets an event by it's recency and paginates results by page number and limit of events per page
-// @route GET /api/v3/app/events?type=latest&limit=5&page=1
+// @route GET /api/v3/app/events/:limit/:page
 // @access Public
 
 const getLatestEvents = asyncHandler(async (req, res) => {

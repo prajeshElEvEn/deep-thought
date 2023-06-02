@@ -78,7 +78,7 @@ const createEvent = asyncHandler(async (req, res) => {
             rigor_rank
         })
 
-        await event.create()
+        await event.save()
 
         return res.status(201).json({
             eventId: event._id

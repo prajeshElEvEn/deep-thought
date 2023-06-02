@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler')
 const Event = require('../models/eventModel')
 
 // @desc Get an event by it's unique id
-// @route GET /api/v3/app/events?id=:event_id
+// @route GET /api/v3/app/events/:id
 // @access Public
 
 const getEventById = asyncHandler(async (req, res) => {

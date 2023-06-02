@@ -8,7 +8,7 @@ The assignment is to create a backend API endpoints for a events section. The ta
 
 | Request Type | Base URL | API Endpoint | Payload | Description |
 | --- | --- | --- | --- | --- |
-| GET | /api/v3/app | /events?id=:event_id | - | Get an event by it's unique id |
+| GET | /api/v3/app | /events/:id | - | Get an event by it's unique id |
 | GET | /api/v3/app | /events?type=latest&limit=5&page=1 | - | Gets an event by it's recency and paginates results by page number and limit of events per page |
 | Post | /api/v3/app | /events | name, files[image], tagline, schedule, description, moderator, category, sub_category, rigor_rank | Creates an event and returns the Id of the event i.e. created |
 | PUT | /api/v3/app | /events/:id | name, files[image], tagline, schedule, description, moderator, category, sub_category, rigor_rank | Updates an event by it's unique id |

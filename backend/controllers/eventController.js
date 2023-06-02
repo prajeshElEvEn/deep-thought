@@ -19,7 +19,7 @@ const getEventById = asyncHandler(async (req, res) => {
         return res.status(200).json(event)
     } catch (error) {
         res.status(500)
-        throw new Error('Server error')
+        throw new Error(`Server error: ${error.message}`)
     }
 })
 
@@ -49,7 +49,7 @@ const getLatestEvents = asyncHandler(async (req, res) => {
         })
     } catch (error) {
         res.status(500)
-        throw new Error('Server error')
+        throw new Error(`Server error: ${error.message}`)
     }
 })
 
@@ -85,7 +85,7 @@ const createEvent = asyncHandler(async (req, res) => {
         })
     } catch (error) {
         res.status(500)
-        throw new Error('Server error')
+        throw new Error(`Server error: ${error.message}`)
     }
 })
 
@@ -122,7 +122,7 @@ const updateEvent = asyncHandler(async (req, res) => {
         return res.status(200).json({ eventId: event._id })
     } catch (error) {
         res.status(500)
-        throw new Error('Server error')
+        throw new Error(`Server error: ${error.message}`)
     }
 })
 
@@ -144,7 +144,7 @@ const deleteEvent = asyncHandler(async (req, res) => {
         return res.status(200).json({ message: 'Event deleted successfully' })
     } catch (error) {
         res.status(500)
-        throw new Error('Server error')
+        throw new Error(`Server error: ${error.message}`)
     }
 })
 

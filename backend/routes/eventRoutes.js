@@ -8,7 +8,8 @@ const {
     deleteEvent
 } = require('../controllers/eventController')
 
-router.route('/events?id=:event_id').get(getEventById)
+// router.route('/events?id=:event_id').get(getEventById)
+router.route('/events/:id').get(getEventById)
 router.route('/events?type=latest&limit=5&page=1').get(getLatestEvents)
 router.route('/events').post(createEvent)
 router.route('/events/:id').put(updateEvent)

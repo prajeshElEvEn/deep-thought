@@ -83,44 +83,8 @@ MONGO_URI=<your-mongodb-uri>
 - Start the server
 
 ```bash
-npm start
+npm run server
 ```
-
-## Usage
-
-- Open Postman and make a GET request to `http://localhost:3000/api/v3/app/events?type=latest&limit=5&page=1` to get the latest 5 events
-
-- Make a POST request to `http://localhost:3000/api/v3/app/events` with the following payload to create an event
-
-```json
-{
-  "name": "Event Name",
-  "tagline": "Event Tagline",
-  "schedule": "2021-08-20T12:00:00.000Z",
-  "description": "Event Description",
-  "moderator": "Moderator Name",
-  "category": "Event Category",
-  "sub_category": "Event Sub Category",
-  "rigor_rank": 5
-}
-```
-
-- Make a PUT request to `http://localhost:3000/api/v3/app/events/:id` with the following payload to update an event
-
-```json
-{
-  "name": "Updated Event Name",
-  "tagline": "Updated Event Tagline",
-  "schedule": "2021-08-20T12:00:00.000Z",
-  "description": "Updated Event Description",
-  "moderator": "Updated Moderator Name",
-  "category": "Updated Event Category",
-  "sub_category": "Updated Event Sub Category",
-  "rigor_rank": 5
-}
-```
-
-- Make a DELETE request to `http://localhost:3000/api/v3/app/events/:id` to delete an event
 
 ## Author
 

@@ -2,6 +2,8 @@
 
 This is a internship based assignment for a role in the company [Deep Thought](https://deepthought.education/).
 
+View documentation [here](https://www.taskade.com/d/H9niqMPw1PG9VTzf?share=view&view=SF1iNCfMm4kTrbgC&as=list).
+
 ## Assignment
 
 The assignment is to create a backend API endpoints for a events section. The table below shows the endpoints that are required.
